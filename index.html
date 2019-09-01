@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TEditor – development sample</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>TEditor – development sample</h1>
+
+  <textarea id="editor" placeholder="Enter some text here...">
+  </textarea>
+
+  <script src="./dist/teditor.js"></script>
+  <script src="./node_modules/@ckeditor/ckeditor5-inspector/build/inspector.js"></script>
+  <script>
+    TEditor.create(document.querySelector('#editor'))
+      .then(editor => {
+        CKEditorInspector.attach(editor);
+      })
+      .catch(err => {
+        console.error(err.stack);
+      });
+  </script>
+
+</body>
+
+</html>

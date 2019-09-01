@@ -1,0 +1,14 @@
+:root {
+  --teditor-emoji-size: 1.1em;
+  --teditor-emoji-horizontal-padding: 3px;
+}
+
+.ck-content img.teditor-emoji {
+    width: var(--teditor-emoji-size);
+    height: var(--teditor-emoji-size);
+    display: inline-block;
+    padding: 0 var(--teditor-emoji-horizontal-padding) 2px;
+    vertical-align: text-bottom;
+    cursor: default;
+    box-sizing: content-box;
+}

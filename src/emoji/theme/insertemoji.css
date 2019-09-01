@@ -1,0 +1,31 @@
+:root {
+	--teditor-insert-emoji-list-padding: 10px;
+	--teditor-insert-emoji-list-width: 380px;
+	--teditor-insert-emoji-item-padding: 4px;
+	--teditor-insert-emoji-item-border-radius: 4px;
+	--teditor-insert-emoji-item-width: 22px;
+}
+
+.ck.teditor-emoji-list {
+  display: flex;
+  width: calc((var(--teditor-insert-emoji-item-width) + var(--teditor-insert-emoji-item-padding) * 2) * 10 + var(--teditor-insert-emoji-list-padding) * 2 );
+  padding: var(--teditor-insert-emoji-list-padding);
+  flex-wrap: wrap;
+}
+
+.ck.teditor-emoji-list .emoji {
+  cursor: pointer;
+  padding: var(--teditor-insert-emoji-item-padding);
+  border-radius: var(--teditor-insert-emoji-item-border-radius);
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+}
+
+.ck.teditor-emoji-list .emoji img {
+  display: block;
+  width: var(--teditor-insert-emoji-item-width);
+  height: var(--teditor-insert-emoji-item-width);
+  cursor: pointer;
+}
