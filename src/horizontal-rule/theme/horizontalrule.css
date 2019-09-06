@@ -1,0 +1,11 @@
+.ck-content .teditor-horizontal-rule {
+  overflow: hidden;
+  padding: 4px 0;
+}
+
+.ck-content hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+}
