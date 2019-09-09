@@ -25,6 +25,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import Mention from '@ckeditor/ckeditor5-mention/src/mention';
 import Emoji from './emoji/emoji';
 
 
@@ -57,6 +58,7 @@ TEditor.builtinPlugins = [
   RemoveFormat,
   Image,
   ImageUpload,
+  Mention,
   Emoji,
 ];
 
