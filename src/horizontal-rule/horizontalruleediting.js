@@ -1,5 +1,4 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
 import HorizontalRuleCommand from './horizontalrulecommand';
 
 import './theme/horizontalrule.css';
@@ -13,9 +12,18 @@ export default class HorizontalRuleEditing extends Plugin {
   }
 
   defineSchema() {
-    this.editor.model.schema.register('horizontalRule', {
+    const { schema } = this.editor.model;
+
+    schema.register('horizontalRule', {
       isObject: true,
       allowWhere: '$block',
+    });
+
+    // eslint-disable-next-line consistent-return
+    schema.addChildCheck((context, childDefinition) => {
+      if (childDefinition.name === 'horizontalRule' && context.endsWith('tableCell')) {
+        return false;
+      }
     });
   }
 
@@ -29,7 +37,7 @@ export default class HorizontalRuleEditing extends Plugin {
 
     conversion.for('dataDowncast').elementToElement({
       model: 'horizontalRule',
-      view: (modelElement, viewWriter) => viewWriter.createEmptyElement('hr'),
+      view: 'hr',
     });
 
     conversion.for('editingDowncast').elementToElement({
@@ -41,7 +49,7 @@ export default class HorizontalRuleEditing extends Plugin {
         viewWriter.addClass('teditor-horizontal-rule', wrapper);
         viewWriter.insert(viewWriter.createPositionAt(wrapper, 0), hr);
 
-        return toWidget(wrapper, viewWriter);
+        return wrapper;
       },
     });
   }

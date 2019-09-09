@@ -1,38 +1,44 @@
 import Command from '@ckeditor/ckeditor5-core/src/command';
-import { findOptimalInsertionPosition } from '@ckeditor/ckeditor5-widget/src/utils';
 
 export default class HorizontalRuleCommand extends Command {
   execute() {
     const { model } = this.editor;
+    const { document } = model;
 
-    const result = model.change((writer) => {
-      const fragment = writer.createDocumentFragment();
-      const hr = writer.createElement('horizontalRule');
-      const paragraph = writer.createElement('paragraph');
+    // eslint-disable-next-line consistent-return
+    document.registerPostFixer((writer) => {
+      const changes = document.differ.getChanges();
 
-      writer.append(hr, fragment);
-      writer.append(paragraph, fragment);
+      // eslint-disable-next-line no-restricted-syntax
+      for (const entry of changes) {
+        if (entry.type === 'insert' && entry.name === 'horizontalRule') {
+          const hr = entry.position.nodeAfter;
 
-      return fragment;
+          if (!hr.nextSibling || model.schema.isObject(hr.nextSibling)) {
+            const paragraph = writer.createElement('paragraph');
+            writer.insert(paragraph, hr, 'after');
+            return true;
+          }
+
+          writer.setSelection(hr.nextSibling, 0);
+        }
+      }
     });
 
-    model.insertContent(result);
+    model.change((writer) => {
+      const hr = writer.createElement('horizontalRule');
+      model.insertContent(hr);
+    });
   }
 
   refresh() {
     const { model } = this.editor;
-    const { schema } = model;
     const { selection } = model.document;
-
-    let { parent } = findOptimalInsertionPosition(selection, model);
-    if (parent.isEmpty && !parent.is('$root')) {
-      parent = parent.parent;
-    }
-
-    const isAllowedInParent = schema.checkChild(parent, 'horizontalRule');
+    const firstPosition = selection.getFirstPosition();
     const selectedElement = selection.getSelectedElement();
 
-    this.isEnabled = isAllowedInParent
-      && !(selectedElement && schema.isObject(selectedElement));
+    this.isEnabled = model.schema.findAllowedParent(
+      firstPosition, 'horizontalRule',
+    ) && !(selectedElement && model.schema.isObject(selectedElement));
   }
 }
