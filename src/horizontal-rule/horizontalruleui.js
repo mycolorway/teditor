@@ -19,7 +19,10 @@ export default class HorizontalRuleUI extends Plugin {
 
       buttonView.bind('isEnabled').to(command, 'isEnabled');
 
-      this.listenTo(buttonView, 'execute', () => editor.execute('horizontalRule'));
+      this.listenTo(buttonView, 'execute', () => {
+        editor.execute('horizontalRule');
+        editor.editing.view.focus();
+      });
 
       return buttonView;
     });

@@ -7,6 +7,7 @@ export default class HorizontalRuleEditing extends Plugin {
   init() {
     this.defineSchema();
     this.defineConverters();
+    this.definePostFixer();
 
     this.editor.commands.add('horizontalRule', new HorizontalRuleCommand(this.editor));
   }
@@ -19,11 +20,11 @@ export default class HorizontalRuleEditing extends Plugin {
       allowWhere: '$block',
     });
 
-    // eslint-disable-next-line consistent-return
     schema.addChildCheck((context, childDefinition) => {
       if (childDefinition.name === 'horizontalRule' && context.endsWith('tableCell')) {
         return false;
       }
+      return null;
     });
   }
 
@@ -51,6 +52,28 @@ export default class HorizontalRuleEditing extends Plugin {
 
         return wrapper;
       },
+    });
+  }
+
+  definePostFixer() {
+    const { document, schema } = this.editor.model;
+    document.registerPostFixer((writer) => {
+      const changes = document.differ.getChanges();
+      return changes.some((change) => {
+        if (change.type === 'insert' && change.name === 'horizontalRule') {
+          const hr = change.position.nodeAfter;
+
+          if (!hr.nextSibling || schema.isObject(hr.nextSibling)) {
+            const paragraph = writer.createElement('paragraph');
+            writer.insert(paragraph, hr, 'after');
+            return true;
+          }
+
+          writer.setSelection(hr.nextSibling, 0);
+        }
+
+        return false;
+      });
     });
   }
 }
