@@ -56,7 +56,8 @@
     "@ckeditor/ckeditor5-typing": "^12.2.0",
     "@ckeditor/ckeditor5-ui": "^14.0.0",
     "@ckeditor/ckeditor5-undo": "^11.0.5",
-    "@ckeditor/ckeditor5-utils": "^14.0.0"
+    "@ckeditor/ckeditor5-utils": "^14.0.0",
+    "@ckeditor/ckeditor5-widget": "^11.1.0"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-dev-utils": "^12.0.5",
@@ -75,5 +76,8 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-middleware": "^3.7.0"
+  },
+  "resolutions": {
+    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#t/ckeditor5/1333"
   }
 }
