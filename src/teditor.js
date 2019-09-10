@@ -13,6 +13,7 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
@@ -26,6 +27,7 @@ import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Emoji from './emoji/emoji';
+import CodeBlock from './code-block/codeblock';
 
 
 export default class TEditor extends ClassicEditorBase { }
@@ -45,6 +47,7 @@ TEditor.builtinPlugins = [
   Italic,
   Underline,
   Strikethrough,
+  Code,
   Link,
   List,
   Paragraph,
@@ -58,6 +61,7 @@ TEditor.builtinPlugins = [
   Image,
   ImageUpload,
   Emoji,
+  CodeBlock,
 ];
 
 TEditor.defaultConfig = {
@@ -75,6 +79,7 @@ TEditor.defaultConfig = {
       'numberedList',
       'bulletedList',
       'blockquote',
+      'codeBlock',
       'insertTable',
       '|',
       'emoji',
