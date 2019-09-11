@@ -1,0 +1,13 @@
+<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+  <g opacity=".25">
+    <path d="M3 2.5 h14 v1 H3 V3z"/>
+    <path d="M3 4.5 h14 v1 H3 V3z"/>
+    <path d="M3 6.5 h14 v1 H3 V3z"/>
+
+    <path d="M3 12.5 h14 v1 H3 V3z"/>
+    <path d="M3 14.5 h14 v1 H3 V3z"/>
+    <path d="M3 16.5 h14 v1 H3 V3z"/>
+  </g>
+
+  <path d="M1 9.25 h18 v1.5 H1 V3z"/>
+</svg>

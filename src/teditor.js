@@ -28,6 +28,7 @@ import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
+import HorizontalRule from './horizontal-rule/horizontalrule';
 
 
 export default class TEditor extends ClassicEditorBase { }
@@ -62,6 +63,7 @@ TEditor.builtinPlugins = [
   ImageUpload,
   Emoji,
   CodeBlock,
+  HorizontalRule,
 ];
 
 TEditor.defaultConfig = {
@@ -81,6 +83,7 @@ TEditor.defaultConfig = {
       'blockquote',
       'codeBlock',
       'insertTable',
+      'horizontalRule',
       '|',
       'emoji',
       'link',
