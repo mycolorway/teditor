@@ -1,9 +1,15 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import { toWidget } from '@ckeditor/ckeditor5-widget/src/utils';
+import Widget from '@ckeditor/ckeditor5-widget/src/widget';
 import HorizontalRuleCommand from './horizontalrulecommand';
 
 import './theme/horizontalrule.css';
 
 export default class HorizontalRuleEditing extends Plugin {
+  static get requires() {
+    return [Widget];
+  }
+
   init() {
     this.defineSchema();
     this.defineConverters();
@@ -50,7 +56,9 @@ export default class HorizontalRuleEditing extends Plugin {
         viewWriter.addClass('teditor-horizontal-rule', wrapper);
         viewWriter.insert(viewWriter.createPositionAt(wrapper, 0), hr);
 
-        return wrapper;
+        return toWidget(wrapper, viewWriter, {
+          label: 'hr widget',
+        });
       },
     });
   }

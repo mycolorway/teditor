@@ -9,6 +9,10 @@
       max-width: 800px;
       margin: 20px auto;
     }
+
+    .actions {
+      margin-top: 20px;
+    }
   </style>
 </head>
 
@@ -19,12 +23,25 @@
   <textarea id="editor" placeholder="Enter some text here...">
   </textarea>
 
+  <div class="actions">
+    <button class="button-get-data">getData</button>
+    <button class="button-destroy">destroy</button>
+  </div>
+
   <script src="./dist/teditor.js"></script>
   <script src="./node_modules/@ckeditor/ckeditor5-inspector/build/inspector.js"></script>
   <script>
     TEditor.create(document.querySelector('#editor'))
       .then(editor => {
         CKEditorInspector.attach(editor);
+
+        document.querySelector('.button-get-data').addEventListener('click', () => {
+          console.log(editor.getData());
+        });
+
+        document.querySelector('.button-destroy').addEventListener('click', () => {
+          editor.destroy();
+        });
       })
       .catch(err => {
         console.error(err.stack);
