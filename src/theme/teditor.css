@@ -1,0 +1,31 @@
+:root {
+  --ck-color-base-border: transparent;
+  --ck-color-toolbar-background: #f6f6f6;
+  --ck-color-text: #777777;
+  
+  --ck-border-radius: 4px;
+  --ck-inner-shadow: none;
+  --ck-focus-ring: 1px solid transparent;
+
+  --ck-font-face: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, "Segoe UI", Roboto, sans-serif;;
+  --ck-font-size-base: 14px;
+  --ck-line-height-base: 1.8;
+}
+
+.ck.ck-editor__editable_inline {
+  padding: 0 0 40px 0;
+}
+
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
+.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+  border-radius: var(--ck-border-radius);
+}
+
+.ck.ck-dropdown .ck-button.ck-dropdown__button .ck-button__label,
+.ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__button .ck-button__label {
+  width: auto;
+}
+
+.ck.ck-button.ck-button_with-text, a.ck.ck-button.ck-button_with-text {
+  padding: var(--ck-spacing-tiny);
+}

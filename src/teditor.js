@@ -1,6 +1,9 @@
+/* eslint-disable max-classes-per-file */
+import { translate } from '@ckeditor/ckeditor5-utils/src/translation-service';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Blockquote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
 import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
 import Enter from '@ckeditor/ckeditor5-enter/src/enter';
 import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
@@ -30,8 +33,12 @@ import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
 import HorizontalRule from './horizontal-rule/horizontalrule';
 
+import './teditorlocale';
+import './theme/teditor.css';
+
 
 export default class TEditor extends ClassicEditorBase { }
+export class TEditorDecoupled extends DecoupledEditorBase { }
 
 TEditor.builtinPlugins = [
   Autoformat,
@@ -65,6 +72,7 @@ TEditor.builtinPlugins = [
   CodeBlock,
   HorizontalRule,
 ];
+TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
 TEditor.defaultConfig = {
   toolbar: {
@@ -95,7 +103,7 @@ TEditor.defaultConfig = {
   },
   heading: {
     options: [{
-      model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph',
+      model: 'paragraph', title: translate('zh-CN', 'Main body'), class: 'ck-heading_paragraph',
     }, {
       model: 'heading1', view: 'h2', title: 'Heading 1', class: 'ck-heading_heading1',
     }, {
@@ -111,3 +119,5 @@ TEditor.defaultConfig = {
   },
   language: 'zh-CN',
 };
+
+TEditorDecoupled.defaultConfig = TEditor.defaultConfig;

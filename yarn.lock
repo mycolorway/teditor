@@ -110,6 +110,17 @@
     "@ckeditor/ckeditor5-utils" "^14.0.0"
     lodash-es "^4.17.10"
 
+"@ckeditor/ckeditor5-editor-decoupled@^12.2.2":
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-editor-decoupled/-/ckeditor5-editor-decoupled-12.2.2.tgz#e2cd8bef8f986f211f37a549bae6841eedb97ec1"
+  integrity sha512-LQWWkKaRUXfCwPQ2HvdXNdhcwfy4hO8C+W+S+V7NtreUyAjvZeLlnmo52z8Xexdgr6iOnfBdRy0s8yh8D7KUkw==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^12.3.0"
+    "@ckeditor/ckeditor5-engine" "^14.0.0"
+    "@ckeditor/ckeditor5-ui" "^14.0.0"
+    "@ckeditor/ckeditor5-utils" "^14.0.0"
+    lodash-es "^4.17.10"
+
 "@ckeditor/ckeditor5-engine@^14.0.0", "@ckeditor/ckeditor5-engine@mycolorway/ckeditor5-engine#t/ckeditor5/1333":
   version "14.0.0"
   resolved "https://codeload.github.com/mycolorway/ckeditor5-engine/tar.gz/82e29adfc6ec6b79c894a180b8af83f21c29471c"
