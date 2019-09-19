@@ -1,7 +1,5 @@
 :root {
-  --ck-color-base-border: transparent;
   --ck-color-toolbar-background: #f6f6f6;
-  --ck-color-text: #777777;
   
   --ck-border-radius: 4px;
   --ck-inner-shadow: none;
@@ -10,6 +8,22 @@
   --ck-font-face: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, "Segoe UI", Roboto, sans-serif;;
   --ck-font-size-base: 14px;
   --ck-line-height-base: 1.8;
+
+  --ck-icon-size: 16px;
+
+  --ck-color-button-default-active-shadow: transparent;
+  --ck-color-button-on-active-shadow: transparent;
+  --ck-color-button-action-active-shadow: transparent;
+  --ck-color-switch-button-inner-shadow: transparent;
+
+  --ck-drop-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+  --ck-color-list-button-on-background: var(--ck-color-button-on-background);
+  --ck-color-list-button-on-background-focus: var(--ck-color-button-on-hover-background);
+  --ck-color-list-button-on-text: inherit;
+}
+
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+  border-color: transparent;
 }
 
 .ck.ck-editor__editable_inline {
@@ -21,11 +35,32 @@
   border-radius: var(--ck-border-radius);
 }
 
+.ck.ck-toolbar {
+  border-color: transparent;
+  padding: 0 var(--ck-spacing-large);
+}
+
+.ck.ck-toolbar__separator {
+  margin-top: 11px;
+  margin-bottom: 11px;
+  margin-left: calc(var(--ck-spacing-large) - var(--ck-spacing-small));
+  margin-right: var(--ck-spacing-large);
+}
+
 .ck.ck-dropdown .ck-button.ck-dropdown__button .ck-button__label,
 .ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__button .ck-button__label {
-  width: auto;
+  width: 3em;
 }
 
 .ck.ck-button.ck-button_with-text, a.ck.ck-button.ck-button_with-text {
   padding: var(--ck-spacing-tiny);
+  padding-left: var(--ck-spacing-small);
+}
+
+.ck.ck-icon, .ck.ck-icon * {
+  color: #777777;
+}
+
+.ck.ck-dropdown__panel {
+  border: none;
 }
