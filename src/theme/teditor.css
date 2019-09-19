@@ -20,6 +20,8 @@
   --ck-color-list-button-on-background: var(--ck-color-button-on-background);
   --ck-color-list-button-on-background-focus: var(--ck-color-button-on-hover-background);
   --ck-color-list-button-on-text: inherit;
+
+  --ck-color-engine-placeholder-text: #999999;
 }
 
 .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
