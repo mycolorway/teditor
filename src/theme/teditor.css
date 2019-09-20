@@ -16,6 +16,16 @@
   --ck-color-button-action-active-shadow: transparent;
   --ck-color-switch-button-inner-shadow: transparent;
 
+  --ck-color-button-default-background: transparent;
+  --ck-color-button-default-hover-background: hsl(0, 0%, 0%, 0.04 );
+  --ck-color-button-default-active-background: hsl(0, 0%, 0%, 0.08);
+  --ck-color-button-default-disabled-background: transparent;
+
+  --ck-color-button-on-background: hsl(0, 0%, 0%, 0.08);
+  --ck-color-button-on-hover-background: hsl(0, 0%, 0%, 0.12);
+  --ck-color-button-on-active-background: hsl(0, 0%, 0%, 0.16);
+  --ck-color-button-on-disabled-background: hsl(0, 0%, 0%, 0.08);
+
   --ck-drop-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.16);
   --ck-color-list-button-on-background: var(--ck-color-button-on-background);
   --ck-color-list-button-on-background-focus: var(--ck-color-button-on-hover-background);
