@@ -64,7 +64,8 @@
   width: 3em;
 }
 
-.ck.ck-button.ck-button_with-text, a.ck.ck-button.ck-button_with-text {
+.ck.ck-button.ck-dropdown__button.ck-button_with-text,
+a.ck.ck-button.ck-dropdown__button.ck-button_with-text {
   padding: var(--ck-spacing-tiny);
   padding-left: var(--ck-spacing-small);
 }
