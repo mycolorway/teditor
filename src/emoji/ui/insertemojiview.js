@@ -42,6 +42,9 @@ export default class InsertTableView extends View {
         },
       }],
       on: {
+        mousedown: bind.to((e) => {
+          e.preventDefault();
+        }),
         click: bind.to((e) => {
           this.fire('execute', {
             src: e.currentTarget.querySelector('img').getAttribute('src'),
