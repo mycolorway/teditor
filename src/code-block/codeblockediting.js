@@ -54,7 +54,12 @@ export default class EmojiEditing extends Plugin {
 
     schema.extend('$text', { allowIn: 'codeBlock' });
 
-    schema.addAttributeCheck((context) => !context.endsWith('codeBlock $text'));
+    schema.addAttributeCheck((context) => {
+      if (context.endsWith('codeBlock $text')) {
+        return false;
+      }
+      return null;
+    });
 
     schema.addChildCheck((context, childDefinition) => {
       const disallowed = ['table', 'emoji-image', 'image', 'paragraph'];
