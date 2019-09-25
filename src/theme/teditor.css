@@ -40,6 +40,7 @@
 
 .ck.ck-editor__editable_inline {
   padding: 0 0 40px 0;
+  overflow: visible;
 }
 
 .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
@@ -76,4 +77,9 @@ a.ck.ck-button.ck-dropdown__button.ck-button_with-text {
 
 .ck.ck-dropdown__panel {
   border: none;
+}
+
+.ck-content hr {
+	border-width: 2px 0 0;
+	border-color: #dfdfdf;
 }

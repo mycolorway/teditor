@@ -59,7 +59,7 @@
     "@ckeditor/ckeditor5-engine" "^14.0.0"
     "@ckeditor/ckeditor5-utils" "^14.0.0"
 
-"@ckeditor/ckeditor5-core@^12.3.0":
+"@ckeditor/ckeditor5-core@^12.2.1", "@ckeditor/ckeditor5-core@^12.3.0":
   version "12.3.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-12.3.0.tgz#8b230c86fce19ffd76b46f45fff5f8a50a7f3ef9"
   integrity sha512-uUK+snI1G9b/kHOqULpEM+b3PCppQOOGkBg+eP/xggn3WPn33u2eh44RPpArsjx80dg5GWx+uj6E7OFdPylHLA==
@@ -155,6 +155,14 @@
     "@ckeditor/ckeditor5-paragraph" "^11.0.5"
     "@ckeditor/ckeditor5-ui" "^14.0.0"
     "@ckeditor/ckeditor5-utils" "^14.0.0"
+
+"@ckeditor/ckeditor5-horizontal-rule@ckeditor/ckeditor5-horizontal-rule#master":
+  version "0.0.1"
+  resolved "https://codeload.github.com/ckeditor/ckeditor5-horizontal-rule/tar.gz/9fe5dd6a94e1dd8ade7786eb6a7360370e8b7477"
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^12.2.1"
+    "@ckeditor/ckeditor5-ui" "^14.0.0"
+    "@ckeditor/ckeditor5-widget" "^11.0.4"
 
 "@ckeditor/ckeditor5-image@^14.0.0":
   version "14.0.0"
@@ -291,7 +299,7 @@
     ckeditor5 "^12.4.0"
     lodash-es "^4.17.10"
 
-"@ckeditor/ckeditor5-widget@^11.1.0":
+"@ckeditor/ckeditor5-widget@^11.0.4", "@ckeditor/ckeditor5-widget@^11.1.0":
   version "11.1.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-11.1.0.tgz#a909bd4d18af4038b93483491669b952fd8a7d63"
   integrity sha512-7RfWOt9o3vTn3MgvWxq9xlKgSPMd03MMyE785cnMSjvMmyXinWhKRjqvScqicSVQnaZvdqliJsu3P3HDF0EN5Q==

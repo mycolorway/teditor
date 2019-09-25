@@ -29,9 +29,9 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import HorizontalRule from '@ckeditor/ckeditor5-horizontal-rule/src/horizontalrule';
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
-import HorizontalRule from './horizontal-rule/horizontalrule';
 
 import './teditorlocale';
 import './theme/teditor.css';
