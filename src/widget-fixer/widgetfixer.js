@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-console */
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import { isWidget } from '@ckeditor/ckeditor5-widget/src/utils';
 
-export default class WidgetBlock extends Plugin {
+export default class WidgetFixer extends Plugin {
   init() {
     this.definePostFixer();
   }
@@ -15,7 +12,6 @@ export default class WidgetBlock extends Plugin {
     document.registerPostFixer((writer) => {
       const changes = document.differ.getChanges();
       return changes.some((change) => {
-        console.log(change);
         if (change.type === 'insert' && ElementNames.includes(change.name)) {
           const node = change.position.nodeAfter;
 
