@@ -32,6 +32,7 @@ import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import HorizontalRule from '@ckeditor/ckeditor5-horizontal-rule/src/horizontalrule';
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
+import WidgetFixer from './widget-fixer/widgetfixer';
 
 import './teditorlocale';
 import './theme/teditor.css';
@@ -71,6 +72,7 @@ TEditor.builtinPlugins = [
   Emoji,
   CodeBlock,
   HorizontalRule,
+  WidgetFixer,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
