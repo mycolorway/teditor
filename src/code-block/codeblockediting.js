@@ -3,15 +3,6 @@ import CodeBlockCommand from './commands/codeblockcommand';
 
 import './theme/codeblock.css';
 
-function fixElementAfterCodeBlock({ codeBlock, writer }) {
-  if (!codeBlock.nextSibling) {
-    const paragraph = writer.createElement('paragraph');
-    writer.insert(paragraph, codeBlock, 'after');
-    return true;
-  }
-  return false;
-}
-
 function fixCodeBlockLineBreak({ codeBlock, change, writer }) {
   if (change.type === 'insert') {
     const endPosition = writer.createPositionAt(codeBlock, change.position.offset + change.length);
@@ -139,12 +130,7 @@ export default class EmojiEditing extends Plugin {
       const { isComposing } = this.editor.editing.view.document;
       const changes = document.differ.getChanges();
       return changes.some((change) => {
-        if (change.type === 'insert' && change.name === 'codeBlock') {
-          const codeBlock = change.position.nodeAfter;
-          if (fixElementAfterCodeBlock({ codeBlock, writer })) {
-            return true;
-          }
-        } else if (!isComposing && change.type === 'insert' && change.name === '$text'
+        if (!isComposing && change.type === 'insert' && change.name === '$text'
           && change.position.parent.is('element', 'codeBlock')) {
           const codeBlock = change.position.parent;
           if (fixCodeBlockLineBreak({
