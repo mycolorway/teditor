@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new CKEditorWebpackPlugin({
-      language: 'zh-CN',
+      language: 'zh-cn',
     }),
     new webpack.NormalModuleReplacementPlugin(
       /ckeditor5-[^/]+\/theme\/icons\/[^/]+\.svg$/,

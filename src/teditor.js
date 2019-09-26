@@ -119,7 +119,7 @@ TEditor.defaultConfig = {
   table: {
     contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
   },
-  language: 'zh-CN',
+  language: 'zh-cN',
 };
 
 TEditorDecoupled.defaultConfig = TEditor.defaultConfig;
