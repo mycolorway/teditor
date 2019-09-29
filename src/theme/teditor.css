@@ -44,9 +44,14 @@
 }
 
 .ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
-.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners,
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky .ck-toolbar,
+.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky .ck-toolbar.ck-rounded-corners,
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky,
+.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky {
   border-radius: var(--ck-border-radius);
 }
+
 
 .ck.ck-toolbar {
   border-color: transparent;
