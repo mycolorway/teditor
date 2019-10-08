@@ -29,7 +29,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
-import HorizontalRule from '@ckeditor/ckeditor5-horizontal-rule/src/horizontalrule';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
 import WidgetFixer from './widget-fixer/widgetfixer';
@@ -71,7 +71,7 @@ TEditor.builtinPlugins = [
   ImageUpload,
   Emoji,
   CodeBlock,
-  HorizontalRule,
+  HorizontalLine,
   WidgetFixer,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
@@ -93,7 +93,7 @@ TEditor.defaultConfig = {
       'blockquote',
       'codeBlock',
       'insertTable',
-      'horizontalRule',
+      'horizontalLine',
       '|',
       'emoji',
       'link',
