@@ -156,9 +156,9 @@
     "@ckeditor/ckeditor5-ui" "^14.0.0"
     "@ckeditor/ckeditor5-utils" "^14.0.0"
 
-"@ckeditor/ckeditor5-horizontal-rule@ckeditor/ckeditor5-horizontal-rule#master":
+"@ckeditor/ckeditor5-horizontal-line@ckeditor/ckeditor5-horizontal-line#master":
   version "0.0.1"
-  resolved "https://codeload.github.com/ckeditor/ckeditor5-horizontal-rule/tar.gz/9fe5dd6a94e1dd8ade7786eb6a7360370e8b7477"
+  resolved "https://codeload.github.com/ckeditor/ckeditor5-horizontal-line/tar.gz/d32b05b9005f6340fe80a6030a5f71ce00e0fe5a"
   dependencies:
     "@ckeditor/ckeditor5-core" "^12.2.1"
     "@ckeditor/ckeditor5-ui" "^14.0.0"
