@@ -29,6 +29,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
@@ -69,6 +70,7 @@ TEditor.builtinPlugins = [
   RemoveFormat,
   Image,
   ImageUpload,
+  ImageResize,
   Emoji,
   CodeBlock,
   HorizontalLine,
