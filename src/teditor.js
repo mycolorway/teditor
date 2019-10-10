@@ -34,6 +34,7 @@ import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalli
 import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
 import WidgetFixer from './widget-fixer/widgetfixer';
+import MagicBlock from './magic-block/magicblock';
 
 import './teditorlocale';
 import './theme/teditor.css';
@@ -75,6 +76,7 @@ TEditor.builtinPlugins = [
   CodeBlock,
   HorizontalLine,
   WidgetFixer,
+  MagicBlock,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
