@@ -123,7 +123,7 @@
 
 "@ckeditor/ckeditor5-engine@^14.0.0", "@ckeditor/ckeditor5-engine@mycolorway/ckeditor5-engine#teditor":
   version "14.0.0"
-  resolved "https://codeload.github.com/mycolorway/ckeditor5-engine/tar.gz/a81b3bf246fefc0108b3c3afb5e3e5c21d769b78"
+  resolved "https://codeload.github.com/mycolorway/ckeditor5-engine/tar.gz/d9d7fa2ae55f8fccfc24f8472b967c72d4a2712b"
   dependencies:
     "@ckeditor/ckeditor5-utils" "^14.0.0"
     lodash-es "^4.17.10"
