@@ -88,3 +88,9 @@ a.ck.ck-button.ck-dropdown__button.ck-button_with-text {
 	border-width: 2px 0 0;
 	border-color: #dfdfdf;
 }
+
+/* Fix IME broken issue */
+.ck-content .table table td > span,
+.ck-content .table table th > span {
+  display: block;
+}
