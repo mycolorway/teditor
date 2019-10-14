@@ -35,7 +35,7 @@ import Emoji from './emoji/emoji';
 import CodeBlock from './code-block/codeblock';
 import WidgetFixer from './widget-fixer/widgetfixer';
 import MagicBlock from './magic-block/magicblock';
-import AutoParagraphing from './auto-paragraphing/autoparagraphing';
+import TableFixer from './table-fixer/tablefixer';
 
 import './teditorlocale';
 import './theme/teditor.css';
@@ -78,7 +78,7 @@ TEditor.builtinPlugins = [
   HorizontalLine,
   WidgetFixer,
   MagicBlock,
-  AutoParagraphing,
+  TableFixer,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
