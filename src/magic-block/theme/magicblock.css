@@ -19,6 +19,7 @@
   color: #999999;
   background-color: #fafafa;
   border-radius: 4px;
+  user-select: none;
 }
 
 .ck-content .magic-block .magic-block-tips:hover {
