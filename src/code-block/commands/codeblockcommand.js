@@ -1,5 +1,6 @@
 import Command from '@ckeditor/ckeditor5-core/src/command';
 import { findOptimalInsertionPosition } from '@ckeditor/ckeditor5-widget/src/utils';
+import { isCodeBlockSelected } from '../utils';
 
 export default class CodeBlockCommand extends Command {
   execute({ forceValue } = {}) {
@@ -11,13 +12,17 @@ export default class CodeBlockCommand extends Command {
     editor.model.change((writer) => {
       if (value) {
         const insertPosition = findOptimalInsertionPosition(selection, model);
-        const codeBlock = writer.createElement('codeBlock');
+        const codeBlock = writer.createElement('codeBlock', {
+          lang: 'none',
+          value: '',
+        });
         editor.model.insertContent(codeBlock, insertPosition);
-        writer.setSelection(codeBlock, 'in');
+        writer.setSelection(codeBlock, 'on');
       } else {
-        const codeBlockElement = selection.getFirstPosition().parent;
-        writer.removeAttribute('lang', codeBlockElement);
-        writer.rename(codeBlockElement, 'paragraph');
+        const codeBlockElement = isCodeBlockSelected(selection);
+        if (codeBlockElement) {
+          writer.remove(codeBlockElement);
+        }
       }
     });
   }
@@ -26,9 +31,8 @@ export default class CodeBlockCommand extends Command {
     const { model } = this.editor;
     const { selection } = model.document;
     const firstPosition = selection.getFirstPosition();
-    const positionParent = firstPosition.parent;
 
-    this.value = positionParent.is('element', 'codeBlock');
+    this.value = isCodeBlockSelected(selection);
     this.isEnabled = this.value || model.schema.findAllowedParent(firstPosition, 'codeBlock');
   }
 }

@@ -18,11 +18,11 @@ export default class CodeBlockUI extends Plugin {
         tooltip: true,
       });
 
-      buttonView.bind('isOn', 'isEnabled').to(command, 'value', 'isEnabled');
+      buttonView.bind('isEnabled').to(command, 'isEnabled');
 
       this.listenTo(buttonView, 'execute', () => {
         editor.execute('codeBlock');
-        editor.editing.view.focus();
+        // editor.editing.view.focus();
       });
 
       return buttonView;

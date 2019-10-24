@@ -59,7 +59,9 @@
     "@ckeditor/ckeditor5-ui": "^15.0.0",
     "@ckeditor/ckeditor5-undo": "^15.0.0",
     "@ckeditor/ckeditor5-utils": "^15.0.0",
-    "@ckeditor/ckeditor5-widget": "^15.0.0"
+    "@ckeditor/ckeditor5-widget": "^15.0.0",
+    "@mycolorway/tao": "^2.0.0-beta.14",
+    "codemirror": "^5.49.2"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-dev-utils": "^12.0.5",
