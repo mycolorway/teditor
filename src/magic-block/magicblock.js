@@ -29,11 +29,12 @@ export default class MagicBlock extends Plugin {
           return;
         }
 
-        if (!child.previousSibling && isWidget(child)) {
+        if (!child.previousSibling && isWidgetOrObject(child)) {
           insertMagicBlockAt(writer, writer.createPositionBefore(child));
         }
 
-        if (isWidget(child) && (!child.nextSibling || isWidget(child.nextSibling))) {
+        if (isWidgetOrObject(child)
+          && (!child.nextSibling || isWidgetOrObject(child.nextSibling))) {
           insertMagicBlockAt(writer, writer.createPositionAfter(child));
         }
       });
@@ -81,15 +82,16 @@ export default class MagicBlock extends Plugin {
 }
 
 function isMagicBlockStillNeeded(magicBlock) {
-  if (!magicBlock.previousSibling && isWidget(magicBlock.nextSibling)) {
+  if (!magicBlock.previousSibling && isWidgetOrObject(magicBlock.nextSibling)) {
     return true;
   }
 
-  if (!magicBlock.nextSibling && isWidget(magicBlock.previousSibling)) {
+  if (!magicBlock.nextSibling && isWidgetOrObject(magicBlock.previousSibling)) {
     return true;
   }
 
-  if (isWidget(magicBlock.previousSibling) && isWidget(magicBlock.nextSibling)) {
+  if (isWidgetOrObject(magicBlock.previousSibling)
+    && isWidgetOrObject(magicBlock.nextSibling)) {
     return true;
   }
 
@@ -112,4 +114,18 @@ function renderMagicBlock(domDocument) {
   domElement.appendChild(tipsElement);
 
   return domElement;
+}
+
+function isWidgetOrObject(element) {
+  if (!element) return false;
+
+  if (isWidget(element)) {
+    return true;
+  }
+
+  if (element.is('element') && element.getCustomProperty('object')) {
+    return true;
+  }
+
+  return false;
 }

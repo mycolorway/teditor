@@ -82,6 +82,6 @@
     "webpack-dev-middleware": "^3.7.0"
   },
   "resolutions": {
-    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#b1776372ba0a1cc2113a279323b1dfa0189e8f30"
+    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#6a4e2524f8641e316af22a4c1e398c37e8f8d09b"
   }
 }
