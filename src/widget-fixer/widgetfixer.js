@@ -18,6 +18,7 @@ export default class WidgetFixer extends Plugin {
           if (!node.nextSibling || schema.isObject(node.nextSibling)) {
             const paragraph = writer.createElement('paragraph');
             writer.insert(paragraph, node, 'after');
+            if (change.name === 'image') writer.setSelection(paragraph, 'after');
             return true;
           }
         }
