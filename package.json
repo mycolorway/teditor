@@ -59,7 +59,9 @@
     "@ckeditor/ckeditor5-ui": "^15.0.0",
     "@ckeditor/ckeditor5-undo": "^15.0.0",
     "@ckeditor/ckeditor5-utils": "^15.0.0",
-    "@ckeditor/ckeditor5-widget": "^15.0.0"
+    "@ckeditor/ckeditor5-widget": "^15.0.0",
+    "@mycolorway/tao": "^2.0.0-beta.14",
+    "codemirror": "^5.49.2"
   },
   "devDependencies": {
     "@ckeditor/ckeditor5-dev-utils": "^12.0.5",
@@ -80,6 +82,6 @@
     "webpack-dev-middleware": "^3.7.0"
   },
   "resolutions": {
-    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#b1776372ba0a1cc2113a279323b1dfa0189e8f30"
+    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#6a4e2524f8641e316af22a4c1e398c37e8f8d09b"
   }
 }

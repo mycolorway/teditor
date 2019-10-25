@@ -32,7 +32,6 @@ import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
 import Emoji from './emoji/emoji';
-import CodeBlock from './code-block/codeblock';
 import WidgetFixer from './widget-fixer/widgetfixer';
 import MagicBlock from './magic-block/magicblock';
 import TableFixer from './table-fixer/tablefixer';
@@ -74,7 +73,6 @@ TEditor.builtinPlugins = [
   ImageUpload,
   ImageResize,
   Emoji,
-  CodeBlock,
   HorizontalLine,
   WidgetFixer,
   MagicBlock,
@@ -97,7 +95,6 @@ TEditor.defaultConfig = {
       'numberedList',
       'bulletedList',
       'blockquote',
-      'codeBlock',
       'insertTable',
       'horizontalLine',
       '|',
