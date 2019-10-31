@@ -47,7 +47,9 @@ export default class MagicBlock extends Plugin {
       const range = selection.getFirstRange();
       if (!range.isCollapsed) return;
 
-      if (range.start.nodeAfter && model.schema.isLimit(range.start.nodeAfter)) {
+      const limitElement = range.start.nodeAfter;
+      const { schema } = model;
+      if (limitElement && schema.isLimit(limitElement) && !schema.isInline(limitElement)) {
         const fixedRanges = writer.createRange(
           range.start, writer.createPositionAfter(range.start.nodeAfter),
         );
