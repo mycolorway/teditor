@@ -58,7 +58,7 @@
   padding: 0 var(--ck-spacing-large);
 }
 
-.ck.ck-toolbar__separator {
+.ck.ck-toolbar .ck.ck-toolbar__separator {
   margin-top: 11px;
   margin-bottom: 11px;
   margin-left: calc(var(--ck-spacing-large) - var(--ck-spacing-small));
