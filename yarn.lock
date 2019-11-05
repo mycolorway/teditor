@@ -122,9 +122,9 @@
     "@ckeditor/ckeditor5-utils" "^15.0.0"
     lodash-es "^4.17.10"
 
-"@ckeditor/ckeditor5-engine@^15.0.0", "@ckeditor/ckeditor5-engine@mycolorway/ckeditor5-engine#6a4e2524f8641e316af22a4c1e398c37e8f8d09b":
+"@ckeditor/ckeditor5-engine@^15.0.0", "@ckeditor/ckeditor5-engine@mycolorway/ckeditor5-engine#56a708d487e8ad3facb9c189a920af628985e266":
   version "15.0.0"
-  resolved "https://codeload.github.com/mycolorway/ckeditor5-engine/tar.gz/6a4e2524f8641e316af22a4c1e398c37e8f8d09b"
+  resolved "https://codeload.github.com/mycolorway/ckeditor5-engine/tar.gz/56a708d487e8ad3facb9c189a920af628985e266"
   dependencies:
     "@ckeditor/ckeditor5-utils" "^15.0.0"
     lodash-es "^4.17.10"
