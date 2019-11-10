@@ -18,26 +18,73 @@ export default class MagicBlock extends Plugin {
     const viewRoot = editingView.document.getRoot();
 
     editingView.document.registerPostFixer((writer) => {
-      Array.from(viewRoot.getChildren()).forEach((child) => {
+      let fixed = false;
+      const fixedPositions = {};
+
+      const { selection } = editingView.document;
+      const firstPosition = selection.getFirstPosition();
+      const lastPosition = selection.getLastPosition();
+      if (firstPosition.parent === firstPosition.root) {
+        fixedPositions.start = firstPosition;
+      }
+      if (lastPosition.parent === lastPosition.root) {
+        fixedPositions.end = lastPosition;
+      }
+
+      function fixSelection(index, diff) {
+        if (fixedPositions.start && fixedPositions.start.offset > index) {
+          fixedPositions.start = writer.createPositionAt(
+            fixedPositions.start.parent, fixedPositions.start.offset + diff,
+          );
+        }
+        if (fixedPositions.end && fixedPositions.end.offset > index) {
+          fixedPositions.end = writer.createPositionAt(
+            fixedPositions.end.parent, fixedPositions.end.offset + diff,
+          );
+        }
+      }
+
+      Array.from(viewRoot.getChildren()).forEach((child, index) => {
         if (child.is('uiElement') && child.hasClass('magic-block') && !isMagicBlockStillNeeded(child)) {
           writer.remove(child);
+          fixSelection(index, -1);
+          fixed = true;
         }
       });
 
-      Array.from(viewRoot.getChildren()).forEach((child) => {
+      Array.from(viewRoot.getChildren()).forEach((child, index) => {
         if (!child.is('containerElement')) {
           return;
         }
 
+        let insertCount = 0;
+
         if (!child.previousSibling && isWidgetOrObject(child)) {
           insertMagicBlockAt(writer, writer.createPositionBefore(child));
+          insertCount += 1;
         }
 
         if (isWidgetOrObject(child)
           && (!child.nextSibling || isWidgetOrObject(child.nextSibling))) {
           insertMagicBlockAt(writer, writer.createPositionAfter(child));
+          insertCount += 1;
+        }
+
+        if (insertCount > 0) {
+          fixed = true;
+          fixSelection(index, insertCount);
         }
       });
+
+      if (fixed) {
+        const range = writer.createRange(
+          fixedPositions.start || firstPosition, fixedPositions.end || lastPosition,
+        );
+        writer.setSelection(range.getTrimmed());
+        return true;
+      }
+
+      return null;
     });
 
     model.document.registerPostFixer((writer) => {
