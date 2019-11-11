@@ -7,9 +7,12 @@ export default class WidgetFixer extends Plugin {
 
   definePostFixer() {
     const ElementNames = ['table', 'image', 'listItem', 'blockQuote', 'codeBlock'];
-    const { document, schema } = this.editor.model;
+    const { editor } = this;
+    const { document, schema } = editor.model;
 
     document.registerPostFixer((writer) => {
+      if (editor.state !== 'ready') return false;
+
       const changes = document.differ.getChanges();
       return changes.some((change) => {
         if (change.type === 'insert' && ElementNames.includes(change.name)) {
