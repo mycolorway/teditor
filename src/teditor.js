@@ -35,6 +35,7 @@ import Emoji from './emoji/emoji';
 import WidgetFixer from './widget-fixer/widgetfixer';
 import MagicBlock from './magic-block/magicblock';
 import TableFixer from './table-fixer/tablefixer';
+import SelectionGravityFixer from './selection-gravity-fixer/selectiongravityfixer';
 
 import './teditorlocale';
 import './theme/teditor.css';
@@ -77,6 +78,7 @@ TEditor.builtinPlugins = [
   WidgetFixer,
   MagicBlock,
   TableFixer,
+  SelectionGravityFixer,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
