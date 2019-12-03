@@ -78,8 +78,5 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",
     "webpack-dev-middleware": "^3.7.0"
-  },
-  "resolutions": {
-    "@ckeditor/ckeditor5-engine": "mycolorway/ckeditor5-engine#a1ee64d70739e2161250947ec68b2411726371b2"
   }
 }
