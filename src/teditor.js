@@ -36,6 +36,7 @@ import WidgetFixer from './widget-fixer/widgetfixer';
 import MagicBlock from './magic-block/magicblock';
 import TableFixer from './table-fixer/tablefixer';
 import SelectionGravityFixer from './selection-gravity-fixer/selectiongravityfixer';
+import ClipboardFixer from './clipboard-fixer/clipboardfixer';
 
 import './teditorlocale';
 import './theme/teditor.css';
@@ -79,6 +80,7 @@ TEditor.builtinPlugins = [
   MagicBlock,
   TableFixer,
   SelectionGravityFixer,
+  ClipboardFixer,
 ];
 TEditorDecoupled.builtinPlugins = TEditor.builtinPlugins;
 
