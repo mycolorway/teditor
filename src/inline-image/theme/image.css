@@ -1,0 +1,20 @@
+.ck-content .image {
+	display: inline-table;
+  margin: 0 5px;
+}
+
+.ck-content .image.image_resized {
+	max-width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+
+	& img {
+		/* For resized images it is the `<figure>` element that determines the image width. */
+		width: 100%;
+	}
+
+	& > figcaption {
+		/* The `<figure>` element uses `display:block`, so `<figcaption>` also has to. */
+		display: block;
+	}
+}

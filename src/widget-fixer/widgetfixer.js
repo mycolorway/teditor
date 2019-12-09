@@ -6,7 +6,7 @@ export default class WidgetFixer extends Plugin {
   }
 
   definePostFixer() {
-    const ElementNames = ['table', 'image', 'listItem', 'blockQuote', 'codeBlock'];
+    const ElementNames = ['table', 'listItem', 'blockQuote', 'codeBlock'];
     const { editor } = this;
     const { document, schema } = editor.model;
 
@@ -21,7 +21,6 @@ export default class WidgetFixer extends Plugin {
           if (!node.nextSibling || schema.isObject(node.nextSibling)) {
             const paragraph = writer.createElement('paragraph');
             writer.insert(paragraph, node, 'after');
-            if (change.name === 'image') writer.setSelection(paragraph, 'after');
             return true;
           }
         }
