@@ -34,7 +34,20 @@ export default class InlineImageEditing extends Plugin {
     conversion.for('dataDowncast').add(inlineImageModelToViewConverter(schema));
     conversion.for('editingDowncast').add(inlineImageModelToViewConverter(schema, { widget: true }));
 
-    conversion.for('upcast').add(inlineImageViewToModelConverter());
+    conversion.for('upcast')
+      .attributeToAttribute({
+        view: {
+          name: 'span',
+          styles: {
+            width: /.+/,
+          },
+        },
+        model: {
+          key: 'width',
+          value: (viewElement) => viewElement.getStyle('width'),
+        },
+      })
+      .add(inlineImageViewToModelConverter());
   }
 }
 
