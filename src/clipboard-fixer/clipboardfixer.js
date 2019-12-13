@@ -1,5 +1,6 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
+import normalizeClipboardHtml from '@ckeditor/ckeditor5-clipboard/src/utils/normalizeclipboarddata';
 
 export default class ClipboardFixer extends Plugin {
   init() {
@@ -12,10 +13,16 @@ export default class ClipboardFixer extends Plugin {
     const viewDocument = view.document;
 
     this.listenTo(viewDocument, 'clipboardInput', (e, { dataTransfer }) => {
-      let content = dataTransfer.getData('text/plain');
-      if (!content) return;
+      let content = '';
 
-      content = plainTextToHtml(content);
+      if (dataTransfer.getData('text/html')) {
+        content = normalizeClipboardHtml(dataTransfer.getData('text/html'));
+      } else if (dataTransfer.getData('text/plain')) {
+        content = plainTextToHtml(dataTransfer.getData('text/plain'));
+      } else {
+        return;
+      }
+
       // eslint-disable-next-line no-underscore-dangle
       content = this.clipboard._htmlDataProcessor.toView(content);
       this.clipboard.fire('inputTransformation', { content, dataTransfer });
