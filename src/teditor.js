@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
 import { translate } from '@ckeditor/ckeditor5-utils/src/translation-service';
-import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Blockquote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
@@ -38,6 +37,7 @@ import TableFixer from './table-fixer/tablefixer';
 import SelectionGravityFixer from './selection-gravity-fixer/selectiongravityfixer';
 import ClipboardFixer from './clipboard-fixer/clipboardfixer';
 import InlineImage from './inline-image/inlineimage';
+import Autoformat from './autoformat/autoformat';
 
 import './teditorlocale';
 import './theme/teditor.css';
