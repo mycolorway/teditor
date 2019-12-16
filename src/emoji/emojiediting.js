@@ -69,7 +69,7 @@ export default class EmojiEditing extends Plugin {
     }).add((dispatcher) => {
       dispatcher.on('element:span', (event, data, conversionApi) => {
         if (!conversionApi.consumable.consume(data.viewItem, {
-          name: true, classes: EMOJI_WRAPPER_CLASS,
+          name: true, classes: EMOJI_WRAPPER_CLASS.split(' '),
         })) {
           return;
         }

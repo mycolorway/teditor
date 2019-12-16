@@ -93,7 +93,7 @@ function inlineImageViewToModelConverter() {
     dispatcher.on('element:span', (event, data, conversionApi) => {
       // Do not convert if this is not an "image figure".
       if (!conversionApi.consumable.test(
-        data.viewItem, { name: true, classes: INLINE_IMAGE_WRAPPER_CLASS },
+        data.viewItem, { name: true, classes: INLINE_IMAGE_WRAPPER_CLASS.split(' ') },
       )) {
         return;
       }
@@ -109,7 +109,7 @@ function inlineImageViewToModelConverter() {
       }
 
       conversionApi.consumable.consume(
-        data.viewItem, { name: true, classes: INLINE_IMAGE_WRAPPER_CLASS },
+        data.viewItem, { name: true, classes: INLINE_IMAGE_WRAPPER_CLASS.split(' ') },
       );
 
       // Convert view image to model image.
