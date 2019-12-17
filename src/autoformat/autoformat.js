@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
-import BlockAutoformatEditing from '@ckeditor/ckeditor5-autoformat/src/blockautoformatediting';
-import InlineAutoformatEditing from '@ckeditor/ckeditor5-autoformat/src/inlineautoformatediting';
+import BlockAutoformatEditing from './blockautoformatediting';
+import InlineAutoformatEditing from './inlineautoformatediting';
 
 export default class Autoformat extends Plugin {
   static get pluginName() {

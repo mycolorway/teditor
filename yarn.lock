@@ -26,14 +26,6 @@
     "@ckeditor/ckeditor5-core" "^16.0.0"
     "@ckeditor/ckeditor5-ui" "^16.0.0"
 
-"@ckeditor/ckeditor5-autoformat@^16.0.0":
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-autoformat/-/ckeditor5-autoformat-16.0.0.tgz#75a94076d6f78e7643a1abf41d598df8cbc0c1a2"
-  integrity sha512-/x65PH7TfGs+xmpN1jvxH1BxkjT3/Zjjf6nZiu4CTRD7tbzVfTqsWY+lDoSbS0BID1y4Q4/uw+9E21f+UnNLjg==
-  dependencies:
-    "@ckeditor/ckeditor5-core" "^16.0.0"
-    "@ckeditor/ckeditor5-typing" "^16.0.0"
-
 "@ckeditor/ckeditor5-basic-styles@^16.0.0":
   version "16.0.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-basic-styles/-/ckeditor5-basic-styles-16.0.0.tgz#4ef4b475a9e559f2247058db27f1fbcbe59049f5"
