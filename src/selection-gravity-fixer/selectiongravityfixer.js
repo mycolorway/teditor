@@ -2,27 +2,42 @@ import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
 export default class SelectionGravityFixer extends Plugin {
   init() {
-    this.definePostFixer();
-  }
-
-  definePostFixer() {
     const Attributes = ['linkHref'];
-    const { editor } = this;
-    const { document } = editor.model;
+    const { model } = this.editor;
+    const { selection } = model.document;
 
-    document.registerPostFixer((writer) => {
-      if (editor.state !== 'ready') return false;
+    this.listenTo(selection, 'change:range', (event, { directChange }) => {
+      const needOverridden = directChange
+        && Attributes.some((attr) => isAtEndBoundary(selection.getFirstPosition(), attr));
 
-      const changes = document.differ.getChanges();
-      return changes.some((change) => {
-        if (change.type === 'insert' && change.name === '$text') {
-          const node = change.position.nodeAfter;
-          if (node && Attributes.some((attr) => node.getAttribute(attr))) {
-            writer.overrideSelectionGravity();
+      if (needOverridden) {
+        model.change((writer) => {
+          if (!this.isGravityOverridden) {
+            this.overrideUid = writer.overrideSelectionGravity();
           }
-        }
-        return false;
-      });
+        });
+      } else if (this.isGravityOverridden) {
+        model.change((writer) => {
+          writer.restoreSelectionGravity(this.overrideUid);
+          this.overrideUid = null;
+        });
+      }
     });
   }
+
+  get isGravityOverridden() {
+    return !!this.overrideUid;
+  }
+}
+
+function isAtEndBoundary(position, attribute) {
+  const { nodeBefore, nodeAfter } = position;
+  const isAttrBefore = nodeBefore ? nodeBefore.hasAttribute(attribute) : false;
+  const isAttrAfter = nodeAfter ? nodeAfter.hasAttribute(attribute) : false;
+
+  return (
+    isAttrBefore
+    && (!isAttrAfter
+      || nodeBefore.getAttribute(attribute) !== nodeAfter.getAttribute(attribute))
+  );
 }
