@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "^16.0.0",
-    "@ckeditor/ckeditor5-autoformat": "^16.0.0",
     "@ckeditor/ckeditor5-basic-styles": "^16.0.0",
     "@ckeditor/ckeditor5-block-quote": "^16.0.0",
     "@ckeditor/ckeditor5-clipboard": "^16.0.0",
