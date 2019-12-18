@@ -214,10 +214,9 @@
     "@ckeditor/ckeditor5-ui" "^16.0.0"
     "@ckeditor/ckeditor5-utils" "^16.0.0"
 
-"@ckeditor/ckeditor5-paste-from-office@^16.0.0":
+"@ckeditor/ckeditor5-paste-from-office@mycolorway/ckeditor5-paste-from-office#e20172b3c9175ac3baf94dd2cb50597a1608b7ef":
   version "16.0.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paste-from-office/-/ckeditor5-paste-from-office-16.0.0.tgz#632fbe0c73045d056a43c18fc1e20210f2ef68b9"
-  integrity sha512-fuLZLj8Wg9iIusSQUM7liJZ+OOdqQ/GvnsRHm7MIwXqiL6SPzN/NsZR4L6Nulxm/fKvx0SSUXYgrQ0mStndQfw==
+  resolved "https://codeload.github.com/mycolorway/ckeditor5-paste-from-office/tar.gz/e20172b3c9175ac3baf94dd2cb50597a1608b7ef"
   dependencies:
     "@ckeditor/ckeditor5-clipboard" "^16.0.0"
     "@ckeditor/ckeditor5-core" "^16.0.0"
