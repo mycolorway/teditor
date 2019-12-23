@@ -1,11 +1,11 @@
 :root {
-  --ck-color-toolbar-background: #f6f6f6;
-  
+  --ck-color-toolbar-background: #ffffff;
+
   --ck-border-radius: 4px;
   --ck-inner-shadow: none;
   --ck-focus-ring: 1px solid transparent;
 
-  --ck-font-face: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, "Segoe UI", Roboto, sans-serif;;
+  --ck-font-face: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, "Segoe UI", Roboto, sans-serif;
   --ck-font-size-base: 14px;
   --ck-line-height-base: 1.8;
 
@@ -17,7 +17,7 @@
   --ck-color-switch-button-inner-shadow: transparent;
 
   --ck-color-button-default-background: transparent;
-  --ck-color-button-default-hover-background: hsl(0, 0%, 0%, 0.04 );
+  --ck-color-button-default-hover-background: hsl(0, 0%, 0%, 0.04);
   --ck-color-button-default-active-background: hsl(0, 0%, 0%, 0.08);
   --ck-color-button-default-disabled-background: transparent;
 
@@ -34,28 +34,31 @@
   --ck-color-engine-placeholder-text: #999999;
 }
 
-.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+.ck.ck-editor {
+  border-radius: 4px;
+  border: 1px solid #e3e3e3;
+}
+
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
   border-color: transparent;
 }
 
 .ck.ck-editor__editable_inline {
-  padding: 0 0 40px 0;
+  padding: 0 12px 40px;
   overflow: visible;
 }
 
-.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar,
-.ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners,
-.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky .ck-toolbar,
-.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky .ck-toolbar.ck-rounded-corners,
-.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky,
-.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content_sticky {
-  border-radius: var(--ck-border-radius);
+.ck.ck-editor__editable_inline > :first-child {
+  margin-top: 0;
 }
 
-
 .ck.ck-toolbar {
+  padding: 0 8px;
   border-color: transparent;
-  padding: 0 var(--ck-spacing-large);
+}
+
+.ck.ck-sticky-panel .ck-sticky-panel__content_sticky {
+  box-shadow: 0 1px 0 #e3e3e3;
 }
 
 .ck.ck-toolbar .ck.ck-toolbar__separator {
@@ -63,6 +66,16 @@
   margin-bottom: 11px;
   margin-left: calc(var(--ck-spacing-large) - var(--ck-spacing-small));
   margin-right: var(--ck-spacing-large);
+}
+
+.ck.ck-button.ck-on .ck.ck-icon,
+.ck.ck-button.ck-on .ck.ck-icon * {
+  fill: #333333;
+}
+
+.ck.ck-icon,
+.ck.ck-icon * {
+  color: #777777;
 }
 
 .ck.ck-dropdown .ck-button.ck-dropdown__button .ck-button__label,
@@ -76,21 +89,31 @@ a.ck.ck-button.ck-dropdown__button.ck-button_with-text {
   padding-left: var(--ck-spacing-small);
 }
 
-.ck.ck-icon, .ck.ck-icon * {
+.ck.ck-dropdown__panel {
+  border: none;
+  border-radius: 4px;
+}
+
+.ck.ck-dropdown.ck-heading-dropdown .ck-dropdown__panel .ck-list__item {
+  min-width: 160px;
+}
+
+.ck-heading-dropdown > .ck.ck-button .ck-button__label {
   color: #777777;
 }
 
-.ck.ck-dropdown__panel {
-  border: none;
-}
-
 .ck-content hr {
-	border-width: 2px 0 0;
-	border-color: #dfdfdf;
+  border-width: 2px 0 0;
+  border-color: #dfdfdf;
 }
 
 /* Fix IME broken issue */
 .ck-content .table table td > span,
 .ck-content .table table th > span {
   display: block;
+}
+
+/* Fix tooltip misalignment  */
+.ck.ck-tooltip.ck-tooltip_s .ck-tooltip__text::after {
+  top: calc(1px - var(--ck-tooltip-arrow-size));
 }
