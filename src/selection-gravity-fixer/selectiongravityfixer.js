@@ -6,9 +6,9 @@ export default class SelectionGravityFixer extends Plugin {
     const { model } = this.editor;
     const { selection } = model.document;
 
-    this.listenTo(selection, 'change:range', (event, { directChange }) => {
-      const needOverridden = directChange
-        && Attributes.some((attr) => isAtEndBoundary(selection.getFirstPosition(), attr));
+    this.listenTo(selection, 'change:range', () => {
+      const needOverridden = Attributes
+        .some((attr) => isAtEndBoundary(selection.getFirstPosition(), attr));
 
       if (needOverridden) {
         model.change((writer) => {
