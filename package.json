@@ -1,6 +1,6 @@
 {
   "name": "@mycolorway/teditor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rich text editor for tower.im",
   "main": "dist/teditor.js",
   "scripts": {
