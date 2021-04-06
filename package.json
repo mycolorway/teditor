@@ -50,7 +50,7 @@
     "@ckeditor/ckeditor5-link": "^16.0.0",
     "@ckeditor/ckeditor5-list": "^16.0.0",
     "@ckeditor/ckeditor5-paragraph": "^16.0.0",
-    "@ckeditor/ckeditor5-paste-from-office": "^16.0.0",
+    "@ckeditor/ckeditor5-paste-from-office": "^27.0.0",
     "@ckeditor/ckeditor5-remove-format": "^16.0.0",
     "@ckeditor/ckeditor5-table": "^16.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^16.0.0",
