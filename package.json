@@ -41,7 +41,7 @@
     "@ckeditor/ckeditor5-editor-decoupled": "^16.0.0",
     "@ckeditor/ckeditor5-engine": "^16.0.0",
     "@ckeditor/ckeditor5-enter": "^16.0.0",
-    "@ckeditor/ckeditor5-font": "^16.0.0",
+    "@ckeditor/ckeditor5-font": "^27.0.0",
     "@ckeditor/ckeditor5-heading": "^16.0.0",
     "@ckeditor/ckeditor5-horizontal-line": "^16.0.0",
     "@ckeditor/ckeditor5-image": "^16.0.0",
