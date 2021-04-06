@@ -48,7 +48,7 @@
     "@ckeditor/ckeditor5-indent": "^16.0.0",
     "@ckeditor/ckeditor5-inspector": "^1.4.0",
     "@ckeditor/ckeditor5-link": "^16.0.0",
-    "@ckeditor/ckeditor5-list": "^16.0.0",
+    "@ckeditor/ckeditor5-list": "^27.0.0",
     "@ckeditor/ckeditor5-paragraph": "^16.0.0",
     "@ckeditor/ckeditor5-paste-from-office": "^16.0.0",
     "@ckeditor/ckeditor5-remove-format": "^16.0.0",
